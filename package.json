@@ -1,0 +1,20 @@
+{
+    "name": "stakeirb",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "packages/stakeirb-back",
+        "packages/stakeirb-front"
+    ],
+    "scripts": {
+        "dev": "npm run dev:back & npm run dev:front",
+        "build": "npm run build:back && npm run build:front",
+        "dev:back": "npm --prefix packages/stakeirb-back run dev",
+        "dev:front": "npm --prefix packages/stakeirb-front run dev",
+        "build:back": "npm --prefix packages/stakeirb-back run build",
+        "build:front": "npm --prefix packages/stakeirb-front run build",
+        "format": "npm run format:back && npm run format:front",
+        "format:back": "npm --prefix packages/stakeirb-back run format",
+        "format:front": "npm --prefix packages/stakeirb-front run format"
+    }
+}
