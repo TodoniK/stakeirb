@@ -6,5 +6,6 @@
 img {
   width: 1rem;
   height: 1rem;
+  aspect-ratio: 1;
 }
 </style>

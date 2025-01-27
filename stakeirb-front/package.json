@@ -13,7 +13,7 @@
     "axios": "^1.6.0",
     "js-sha256": "^0.10.1",
     "socket.io-client": "^4.7.2",
-    "sweetalert2": "^11.10.1",
+    "sweetalert2": "^11.6.13",
     "vue": "^3.3.4",
     "vue-jwt-decode": "^0.1.0",
     "vue-router": "^4.2.4",

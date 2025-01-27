@@ -21,19 +21,23 @@ The objective of this project is to build a web application. We have chosen to c
 git clone git@github.com:imjxlian/stakeirb.git
 ```
 
-2. Install dependencies
+2. Create .env
+
+Need to create a JWT_TOKEN_KEY in a /stakeirb-back/.env to be able to sign your requests.
+
+3. Install dependencies
 
 ```bash
 cd stakeirb-front && npm install && cd ../stakeirb-back && npm install
 ```
 
-3. Run the server
+4. Run the server
 
 ```bash
 cd stakeirb-back && npm run dev && cd ../stakeirb-front && npm run dev
 ```
 
-4. Open the application
+5. Open the application
 
 ```bash
 open http://localhost:5173
