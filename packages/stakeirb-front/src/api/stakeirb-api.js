@@ -4,7 +4,7 @@ import VueJwtDecode from 'vue-jwt-decode'
 import { store } from '@/store'
 import { displayErrorModal, displaySuccessModal } from '@/components/modals/modalsManager'
 
-const API_URL = 'http://localhost:3000'
+const API_URL = 'http://julesroyet-projects.me:3000'
 const USERS_URL = `${API_URL}/users`
 const BETS_URL = `${API_URL}/bets`
 const MESSAGE_URL = `${API_URL}/messages`
