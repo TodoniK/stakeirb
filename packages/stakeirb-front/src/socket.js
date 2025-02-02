@@ -2,7 +2,9 @@
 import { ref, onMounted } from 'vue'
 import io from 'socket.io-client'
 
-const socket = io('https://julesroyet-projects.me/api')
+const socket = io('https://julesroyet-projects.me', {
+  path: '/api/'
+})
 
 export function useSocket() {
   const isSocketConnected = ref(false)
