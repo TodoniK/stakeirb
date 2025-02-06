@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   backend:
     build:
@@ -6,11 +8,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
       - PORT=3000
-    volumes:
-      - ./packages/stakeirb-back:/app
-      - /app/node_modules
     networks:
       - stakeirb-network
 
@@ -19,12 +18,7 @@ services:
       context: ./packages/stakeirb-front
       dockerfile: Dockerfile
     ports:
-      - "5173:5173"
-    environment:
-      - NODE_ENV=development
-    volumes:
-      - ./packages/stakeirb-front:/app
-      - /app/node_modules
+      - "80:80"
     networks:
       - stakeirb-network
     depends_on:
