@@ -18,7 +18,7 @@ services:
       context: ./packages/stakeirb-front
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8080:80"
     networks:
       - stakeirb-network
     depends_on:
