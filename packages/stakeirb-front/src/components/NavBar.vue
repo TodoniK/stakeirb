@@ -4,7 +4,7 @@
       <div class="logo-container">
         <router-link to="/">
           <img
-            src="../assets/images/logos/logo-stakeirb-light.png"
+            src="/assets/images/logos/logo-stakeirb-light.png"
             alt="Stak'Eirb logo"
             class="logo"
           />
@@ -24,7 +24,7 @@
         <router-link :to="userRoute" class="profile-link">
           <div class="username-container">
             <img
-              :src="user.pfp_url ? user.pfp_url : '../assets/images/users/default-user-img.svg'"
+              :src="user.pfp_url ? user.pfp_url : '/assets/images/users/default-user-img.svg'"
               alt="User profile picture"
               class="user-img"
             />
@@ -35,7 +35,7 @@
           <InputButton :value="'Logout'" :type="'danger'" :disabled="false" />
         </router-link>
         <div @click="toggleChat">
-          <img src="../assets/images/icons/message.svg" alt="Message" class="msg-icon" />
+          <img src="/assets/images/icons/message.svg" alt="Message" class="msg-icon" />
         </div>
       </div>
 
@@ -47,7 +47,7 @@
           <InputButton :value="'Register'" :type="'success'" :disabled="false" />
         </router-link>
         <div @click="toggleChat">
-          <img src="../assets/images/icons/message.svg" alt="Message" class="msg-icon" />
+          <img src="/assets/images/icons/message.svg" alt="Message" class="msg-icon" />
         </div>
       </div>
     </div>

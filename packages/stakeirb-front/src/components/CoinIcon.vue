@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/images/icons/coineirb.png" alt="Coin Icon" />
+  <img src="/assets/images/icons/coineirb.png" alt="Coin Icon" />
 </template>
 
 <style scoped>

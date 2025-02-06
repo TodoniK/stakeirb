@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="top-infos">
         <img
-          :src="user?.pfp_url ? user.pfp_url : '../assets/images/users/default-user-img.svg'"
+          :src="user?.pfp_url ? user.pfp_url : '/assets/images/users/default-user-img.svg'"
           alt="User profile picture"
           class="user-img"
         />

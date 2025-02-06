@@ -13,7 +13,7 @@
           :class="{ dice: true, hide: props.hideDice, show: !props.hideDice }"
           :style="`left: ${result}%; transform: scale(${props.diceScale})`"
         >
-          <img src="../assets/images/games/dice/dice.svg" alt="Dice" :style="`left: ${result}%;`" />
+          <img src="/assets/images/games/dice/dice.svg" alt="Dice" :style="`left: ${result}%;`" />
           <span :class="{ green: win, red: !win }">{{ result }}</span>
         </div>
       </div>
@@ -34,7 +34,7 @@
         :min="1"
         :max="10000"
         label="Multiplier"
-        imageSrc="../src/assets/images/icons/x.svg"
+        imageSrc="/assets/images/icons/x.svg"
         :disabled="true"
         :value="multiplier"
       />
@@ -45,7 +45,7 @@
         :min="0"
         :value="range"
         :label="'Roll ' + textUnderOver"
-        imageSrc="../src/assets/images/icons/double-arrows.svg"
+        imageSrc="/assets/images/icons/double-arrows.svg"
         @click="changeSide"
         :disabled="false"
       />
@@ -55,7 +55,7 @@
         :min="0.01"
         :max="98"
         label="Chance of Winning"
-        imageSrc="../src/assets/images/icons/percent.svg"
+        imageSrc="/assets/images/icons/percent.svg"
         :disabled="true"
         :value="probabilityOfWinning"
         @update:value="probabilityOfWinning = $event"

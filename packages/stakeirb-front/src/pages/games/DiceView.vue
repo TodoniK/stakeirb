@@ -9,7 +9,7 @@
             :min="1"
             :value="Number(betAmount) !== 0 ? Number(betAmount).toFixed(0) : 0"
             label="Bet Amount"
-            imageSrc="../src/assets/images/icons/coineirb.png"
+            imageSrc="/assets/images/icons/coineirb.png"
             :disabled="false"
             :actions="inputActions"
             @update:value="updateBetAmount"
@@ -19,7 +19,7 @@
             :min="0"
             :value="(betAmount * multiplier).toFixed(0)"
             label="Win Amount"
-            imageSrc="../src/assets/images/icons/coineirb.png"
+            imageSrc="/assets/images/icons/coineirb.png"
             :disabled="true"
             :actions="[{ value: 'Copy', action: copyWinAmount }]"
           />
@@ -111,7 +111,7 @@ function toggleIsUnder() {
 }
 
 function updateRange(newVal) {
-  playSound('../src/assets/sounds/tick.mp3')
+  playSound('/assets/sounds/tick.mp3')
   range.value = parseFloat(newVal).toFixed(2)
 }
 
@@ -132,7 +132,7 @@ async function bet() {
     return
   }
 
-  playSound('../src/assets/sounds/bet.mp3')
+  playSound('/assets/sounds/bet.mp3')
   await sleep(200)
 
   const bet = {
@@ -160,11 +160,11 @@ async function bet() {
     betsHistory.value.shift()
   }
 
-  playSound('../src/assets/sounds/rolling.mp3')
+  playSound('/assets/sounds/rolling.mp3')
 
   isBetting.value = false
 
-  if (won) setTimeout(() => playSound('../src/assets/sounds/win.mp3'), 300)
+  if (won) setTimeout(() => playSound('/assets/sounds/win.mp3'), 300)
 
   animateDiceRoll()
 }

@@ -12,7 +12,7 @@ import { defineProps } from 'vue'
 const { game } = defineProps(['game'])
 
 const getImagePath = () => {
-  return `../src/assets/images/games/${game}.jpg`
+  return `/assets/images/games/${game}.jpg`
 }
 </script>
 
