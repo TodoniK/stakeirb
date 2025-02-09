@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue'
 import io from 'socket.io-client'
 
-const socket = io('https://julesroyet-projects.me', {
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
   path: '/socket.io/'
 })
 
