@@ -3,11 +3,7 @@
     <div class="grid wrapper nav-container">
       <div class="logo-container">
         <router-link to="/">
-          <img
-            src="/assets/images/logos/logo-stakeirb-light.png"
-            alt="Stak'Eirb logo"
-            class="logo"
-          />
+          <img src="/assets/images/logos/logo-stakeirb-light.png" alt="Stak'Eirb logo" class="logo" />
         </router-link>
       </div>
 
@@ -23,18 +19,14 @@
       <div v-if="isLoggedIn" class="right-menu">
         <router-link :to="userRoute" class="profile-link">
           <div class="username-container">
-            <img
-              :src="user.pfp_url ? user.pfp_url : '/assets/images/users/default-user-img.svg'"
-              alt="User profile picture"
-              class="user-img"
-            />
+            <img :src="user.pfp_url ? user.pfp_url : '/assets/images/users/default-user-img.svg'" alt="User profile picture" class="user-img" />
             {{ user.username }}
           </div>
         </router-link>
         <router-link to="/logout">
           <InputButton :value="'Logout'" :type="'danger'" :disabled="false" />
         </router-link>
-        <div @click="toggleChat">
+        <div class="msg-icon-container" @click="toggleChat">
           <img src="/assets/images/icons/message.svg" alt="Message" class="msg-icon" />
         </div>
       </div>
@@ -46,7 +38,7 @@
         <router-link to="/register">
           <InputButton :value="'Register'" :type="'success'" :disabled="false" />
         </router-link>
-        <div @click="toggleChat">
+        <div class="msg-icon-container" @click="toggleChat">
           <img src="/assets/images/icons/message.svg" alt="Message" class="msg-icon" />
         </div>
       </div>
@@ -202,5 +194,27 @@ const formattedUserBalance = computed(() => {
   height: 1.2rem;
   aspect-ratio: 1/1;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .logo-container {
+    justify-content: center;
+  }
+
+  .balance-container,
+  .right-menu {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .msg-icon-container {
+    display: none;
+  }
 }
 </style>

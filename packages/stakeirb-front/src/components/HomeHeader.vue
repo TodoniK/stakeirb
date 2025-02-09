@@ -72,4 +72,15 @@ const user = computed(() => store.getters.user)
   width: 75%;
   margin: auto;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 1rem;
+  }
+
+  .games {
+    flex-direction: column; /* Passez en colonne sur mobile */
+    align-items: center;
+  }
+}
 </style>

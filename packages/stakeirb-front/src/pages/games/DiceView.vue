@@ -240,7 +240,7 @@ function animateDiceRoll() {
   min-width: 300px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .card {
     flex-direction: column-reverse !important;
     justify-content: flex-start !important;
