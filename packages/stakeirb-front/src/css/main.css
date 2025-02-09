@@ -87,3 +87,13 @@ input {
 input:focus {
   outline: none;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --padding-container: 1rem;
+  }
+
+  body {
+    font-size: 14px; /* Réduisez la taille de la police sur mobile */
+  }
+}
