@@ -25,6 +25,17 @@ git clone git@github.com:imjxlian/stakeirb.git
 
 Need to create a JWT_TOKEN_KEY in a /stakeirb-back/.env to be able to sign your requests.
 
+```bash
+JWT_TOKEN_KEY=your_jwt_token_key
+```
+
+Need to create a VITE_SOCKET_URL and a VITE_API_URL in a /stakeirb-front/.env to connect the frontend to the backend.
+
+```bash
+VITE_SOCKET_URL=http://localhost:3000
+VITE_API_URL=http://localhost:3000
+```
+
 3. Install dependencies
 
 ```bash
