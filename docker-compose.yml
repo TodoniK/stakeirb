@@ -6,7 +6,7 @@ services:
       context: ./packages/stakeirb-back
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "38471:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -18,7 +18,7 @@ services:
       context: ./packages/stakeirb-front
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "48572:80"
     networks:
       - stakeirb-network
     depends_on:
