@@ -6,8 +6,9 @@ services:
     ports:
       - "38471:3000"
     environment:
-      - NODE_ENV=production
-      - PORT=3000
+      NODE_ENV: production
+      PORT: 3000
+      JWT_TOKEN_KEY: ${JWT_TOKEN_KEY}
     networks:
       - stakeirb-network
 
@@ -15,6 +16,9 @@ services:
     build:
       context: ./packages/stakeirb-front
       dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL}
+        VITE_SOCKET_URL: ${VITE_SOCKET_URL}
     ports:
       - "48572:80"
     networks:
