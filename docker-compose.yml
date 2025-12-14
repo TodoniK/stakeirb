@@ -8,7 +8,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
-      JWT_TOKEN_KEY: ${JWT_TOKEN_KEY}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
     networks:
       - stakeirb-network
 
