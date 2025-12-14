@@ -31,3 +31,4 @@ coverage
 # Database file (sqlite)
 stakeirb-database.db
 packages/stakeirb-front/.env
+.env

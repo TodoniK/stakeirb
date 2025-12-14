@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import VueJwtDecode from 'vue-jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 import { store } from '@/store'
 import { displayErrorModal, displaySuccessModal } from '@/components/modals/modalsManager'
 
@@ -135,7 +135,7 @@ export const useLogin = async (user, store) => {
     localStorage.setItem('accessToken', response.data.accessToken)
 
     // Decode JWT token to get user infos
-    const decodedToken = VueJwtDecode.decode(response.data.accessToken)
+    const decodedToken = jwtDecode(response.data.accessToken)
 
     const decodedUser = decodedToken.user
 
@@ -155,7 +155,7 @@ export const useRegister = async (user, store) => {
     localStorage.setItem('accessToken', response.data.accessToken)
 
     // Decode JWT token to get user infos
-    const decodedToken = VueJwtDecode.decode(response.data.accessToken)
+    const decodedToken = jwtDecode(response.data.accessToken)
 
     const decodedUser = decodedToken.user
 
