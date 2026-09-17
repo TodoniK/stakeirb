@@ -9,6 +9,7 @@ services:
       JWT_SECRET_KEY: ${JWT_SECRET_KEY}
     networks:
       - stakeirb-network
+      - dokploy-network
 
   frontend:
     build:
@@ -25,3 +26,5 @@ services:
 networks:
   stakeirb-network:
     driver: bridge
+  dokploy-network:
+    external: true
