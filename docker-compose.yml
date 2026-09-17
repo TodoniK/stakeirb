@@ -3,8 +3,6 @@ services:
     build:
       context: ./packages/stakeirb-back
       dockerfile: Dockerfile
-    ports:
-      - "38471:3000"
     environment:
       NODE_ENV: production
       PORT: 3000
@@ -17,10 +15,8 @@ services:
       context: ./packages/stakeirb-front
       dockerfile: Dockerfile
       args:
-        VITE_API_URL: ${VITE_API_URL}
-        VITE_SOCKET_URL: ${VITE_SOCKET_URL}
-    ports:
-      - "48572:80"
+        VITE_API_URL: ${VITE_API_URL:-/api}
+        VITE_SOCKET_URL: ${VITE_SOCKET_URL:-}
     networks:
       - stakeirb-network
     depends_on:
