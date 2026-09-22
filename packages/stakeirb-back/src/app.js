@@ -12,8 +12,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const sqliteStorage = process.env.SQLITE_STORAGE_PATH || "stakeirb-database.db";
 const sequelize = new Sequelize(
-  process.env.SQLITE_STORAGE_PATH || "sqlite:stakeirb-database.db",
+  sqliteStorage.startsWith("sqlite:") ? sqliteStorage : `sqlite:${sqliteStorage}`,
 );
 
 // No logging
