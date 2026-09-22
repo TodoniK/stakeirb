@@ -12,7 +12,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const sequelize = new Sequelize("sqlite:stakeirb-database.db");
+const sequelize = new Sequelize(
+  process.env.SQLITE_STORAGE_PATH || "sqlite:stakeirb-database.db",
+);
 
 // No logging
 sequelize.options.logging = false;
@@ -47,7 +49,12 @@ const randomImage = () => {
 
 const hydrateDatabase = async () => {
   try {
-    await sequelize.sync({ force: true });
+    const resetDatabase = process.env.DB_RESET === "true";
+    await sequelize.sync({ force: resetDatabase });
+
+    if (!resetDatabase) {
+      return;
+    }
 
     // Create some users with some messages
     const user1 = await User.create({

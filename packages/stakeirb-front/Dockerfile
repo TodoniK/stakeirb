@@ -1,4 +1,4 @@
-FROM node:20 AS build
+FROM node:22-alpine AS build
 
 WORKDIR /app
 
@@ -9,9 +9,12 @@ ENV VITE_API_URL=$VITE_API_URL
 ENV VITE_SOCKET_URL=$VITE_SOCKET_URL
 
 COPY package*.json ./
-RUN npm install
+COPY packages/stakeirb-back/package*.json packages/stakeirb-back/
+COPY packages/stakeirb-front/package*.json packages/stakeirb-front/
+RUN npm ci
 
-COPY . .
+COPY packages/stakeirb-front packages/stakeirb-front
+WORKDIR /app/packages/stakeirb-front
 RUN npm run build
 
 FROM nginx:alpine

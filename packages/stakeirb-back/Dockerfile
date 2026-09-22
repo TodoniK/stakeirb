@@ -1,11 +1,13 @@
-FROM node:20
+FROM node:22-alpine
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install --only=production
+COPY packages/stakeirb-back/package*.json packages/stakeirb-back/
+RUN npm ci --omit=dev --workspace=packages/stakeirb-back --include-workspace-root=false
 
-COPY . .
+COPY packages/stakeirb-back packages/stakeirb-back
+WORKDIR /app/packages/stakeirb-back
 
 ENV NODE_ENV=production
 ENV PORT=3000
